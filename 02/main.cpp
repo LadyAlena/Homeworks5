@@ -1,11 +1,11 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 
 class Figure {
 public:
 
 	Figure() {
-		name = "Ôèãóðà";
+		name = "Ð¤Ð¸Ð³ÑƒÑ€Ð°";
 		side = 0;
 	}
 
@@ -29,12 +29,12 @@ protected:
 };
 
 
-//Òðåóãîëüíèêè
+//Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ¸
 
 class Triangle : public Figure {
 public:
 	Triangle(int a, int b, int c, int A, int B, int C) {
-		name = "Òðåóãîëüíèê";
+		name = "Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº";
 		side = 3;
 		this->a = a;
 		this->b = b;
@@ -45,11 +45,11 @@ public:
 	}
 
 	void GetSides() override {
-		std::cout << "Ñòîðîíû: " << "a = " << a << " b = " << b << " c = " << c << std::endl;
+		std::cout << "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: " << "a = " << a << " b = " << b << " c = " << c << std::endl;
 	}
 
 	void GetAngles() override {
-		std::cout << "Óãëû: " << "A = " << A << " B = " << B << " C = " << C << std::endl;
+		std::cout << "Ð£Ð³Ð»Ñ‹: " << "A = " << A << " B = " << B << " C = " << C << std::endl;
 	}
 
 protected:
@@ -64,7 +64,7 @@ protected:
 class RightTriangle : public Triangle {
 public:
 	RightTriangle(int a, int b, int c, int A, int B) : Triangle(a, b, c, A, B, 90) {
-		name = "Ïðÿìîóãîëüíûé òðåóãîëüíèê";
+		name = "ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº";
 	}
 
 };
@@ -72,7 +72,7 @@ public:
 class IsoscelesTriangle : public Triangle {
 public:
 	IsoscelesTriangle(int LengthAandC, int b, int valueAnglesAandC, int B) : Triangle(LengthAandC, b, LengthAandC, valueAnglesAandC, B, valueAnglesAandC) {
-		name = "Ðàâíîáåäðåííûé òðåóãîëüíèê";
+		name = "Ð Ð°Ð²Ð½Ð¾Ð±ÐµÐ´Ñ€ÐµÐ½Ð½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº";
 	}
 
 };
@@ -80,16 +80,16 @@ public:
 class EquilateraltTriangle : public Triangle {
 public:
 	EquilateraltTriangle(int LengthSide) : Triangle(LengthSide, LengthSide, LengthSide, 60, 60, 60) {
-		name = "Ðàâíîñòîðîííèé òðåóãîëüíèê";
+		name = "Ð Ð°Ð²Ð½Ð¾ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð½Ð¸Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº";
 	}
 };
 
-// ×åòûðåõóãîëüíèê
+// Ð§ÐµÑ‚Ñ‹Ñ€ÐµÑ…ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº
 
 class Quadrilateral : public Figure {
 public:
 	Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) {
-		name = "×åòûðåõóãîëüíèê";
+		name = "Ð§ÐµÑ‚Ñ‹Ñ€ÐµÑ…ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº";
 		side = 4;
 		this->a = a;
 		this->b = b;
@@ -102,11 +102,11 @@ public:
 	}
 
 	void GetSides() override {
-		std::cout << "Ñòîðîíû: " << "a = " << a << " b = " << b << " c = " << c << " d = " << d << std::endl;
+		std::cout << "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: " << "a = " << a << " b = " << b << " c = " << c << " d = " << d << std::endl;
 	}
 
 	void GetAngles() override {
-		std::cout << "Óãëû: " << "A = " << A << " B = " << B << " C = " << C << " D = " << D << std::endl;
+		std::cout << "Ð£Ð³Ð»Ñ‹: " << "A = " << A << " B = " << B << " C = " << C << " D = " << D << std::endl;
 	}
 
 protected:
@@ -123,28 +123,28 @@ protected:
 class Parallelogram : public Quadrilateral {
 public:
 	Parallelogram(int LengthAandC, int LengthBandD, int AnglesAandC, int AnglesBandD) : Quadrilateral(LengthAandC, LengthBandD, LengthAandC, LengthBandD, AnglesAandC, AnglesBandD, AnglesAandC, AnglesBandD) {
-		name = "Ïàðàëëåëîãðàìì";
+		name = "ÐŸÐ°Ñ€Ð°Ð»Ð»ÐµÐ»Ð¾Ð³Ñ€Ð°Ð¼Ð¼";
 	}
 };
 
 class Rectangle : public Parallelogram {
 public:
 	Rectangle(int LengthAandC, int LengthBandD) : Parallelogram(LengthAandC, LengthBandD, 90, 90) {
-		name = "Ïðÿìîóãîëüíèê";
+		name = "ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº";
 	}
 };
 
 class Rhomb : public Parallelogram {
 public:
 	Rhomb(int LengthSides, int AnglesAandC, int AnglesBandD) : Parallelogram(LengthSides, LengthSides, AnglesAandC, AnglesBandD) {
-		name = "Ðîìá";
+		name = "Ð Ð¾Ð¼Ð±";
 	}
 };
 
 class Square : public Rectangle {
 public:
 	Square(int LengthSides) : Rectangle(LengthSides, LengthSides) {
-		name = "Êâàäðàò";
+		name = "ÐšÐ²Ð°Ð´Ñ€Ð°Ñ‚";
 	}
 };
 
