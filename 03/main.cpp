@@ -11,17 +11,15 @@ public:
 
 	virtual bool checkFigure() {
 
-		bool сondition = this->side == 0 ? true : false;
-
-		return сondition;
+		return side == 0;
 	}
 
 	int GetCountSides() {
-		return this->side;
+		return side;
 	}
 
 	std::string GetName() {
-		return this->name;
+		return name;
 	}
 
 	virtual void GetSides() {};
@@ -60,9 +58,7 @@ public:
 
 	bool checkFigure() override {
 
-		bool condition = A + B + C == 180 ? true : false;
-
-		return condition;
+		return (A + B + C) == 180;
 	}
 
 	void GetSides() override {
@@ -90,9 +86,7 @@ public:
 
 	bool checkFigure() override {
 
-		bool condition = Triangle::checkFigure() && (C == 90 ? true : false)
-
-		return condition;
+		return Triangle::checkFigure() && (C == 90);
 	}
 
 };
@@ -105,9 +99,7 @@ public:
 
 	bool checkFigure() override {
 
-		bool condition = Triangle::checkFigure() && (a == c && A == C ? true : false)
-
-		return condition;
+		return Triangle::checkFigure() && (a == c && A == C);
 	}
 
 };
@@ -120,9 +112,7 @@ public:
 
 	bool checkFigure() override {
 
-		bool condition = Triangle::checkFigure() && ((a == c && a == b && b == c) && (A == C && A == B && B == C) ? true : false);
-
-		return condition;
+		return Triangle::checkFigure() && ((a == c && a == b && b == c) && (A == C && A == B && B == C));
 	}
 };
 
@@ -145,9 +135,7 @@ public:
 
 	bool checkFigure() override {
 
-		bool condition = (A + B + C + D == 360 ? true : false);
-
-		return condition;
+		return (A + B + C + D) == 360;
 	}
 
 	void GetSides() override {
@@ -177,9 +165,7 @@ public:
 
 	bool checkFigure() override {
 
-		bool condition = Quadrilateral::checkFigure() && ((a == c && b == d) && (A == C && B == D) ? true : false);
-
-		return condition;
+		return Quadrilateral::checkFigure() && ((a == c && b == d) && (A == C && B == D));
 	}
 
 };
