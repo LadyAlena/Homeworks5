@@ -1,16 +1,19 @@
-#include <iostream>
+Ôªø#include <iostream>
 #include <string>
 
 class Figure {
 public:
 
 	Figure() {
-		name = "‘Ë„Û‡";
+		name = "–§–∏–≥—É—Ä–∞";
 		side = 0;
 	}
 
 	virtual bool checkFigure() {
-		return (this->side == 0 ? true : false);
+
+		bool —Åondition = this->side == 0 ? true : false;
+
+		return —Åondition;
 	}
 
 	int GetCountSides() {
@@ -27,8 +30,8 @@ public:
 
 	void showInfoFigure() {
 		std::cout << GetName() << ": " << std::endl;
-		std::cout << (checkFigure() ? "œ‡‚ËÎ¸Ì‡ˇ" : "ÕÂÔ‡‚ËÎ¸Ì‡ˇ") << std::endl;
-		std::cout << " ÓÎË˜ÂÒÚ‚Ó ÒÚÓÓÌ: " << GetCountSides() << std::endl;
+		std::cout << (checkFigure() ? "–ü—Ä–∞–≤–∏–ª—å–Ω–∞—è" : "–ù–µ–ø—Ä–∞–≤–∏–ª—å–Ω–∞—è") << std::endl;
+		std::cout << "–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ —Å—Ç–æ—Ä–æ–Ω: " << GetCountSides() << std::endl;
 		GetSides();
 		GetAngles();
 		std::cout << std::endl;
@@ -40,12 +43,12 @@ protected:
 };
 
 
-//“ÂÛ„ÓÎ¸ÌËÍË
+//–¢—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫–∏
 
 class Triangle : public Figure {
 public:
 	Triangle(int a, int b, int c, int A, int B, int C) {
-		name = "“ÂÛ„ÓÎ¸ÌËÍ";
+		name = "–¢—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫";
 		side = 3;
 		this->a = a;
 		this->b = b;
@@ -56,15 +59,18 @@ public:
 	}
 
 	bool checkFigure() override {
-		return (A + B + C == 180 ? true : false);
+
+		bool condition = A + B + C == 180 ? true : false;
+
+		return condition;
 	}
 
 	void GetSides() override {
-		std::cout << "—ÚÓÓÌ˚: " << "a = " << a << " b = " << b << " c = " << c << std::endl;
+		std::cout << "–°—Ç–æ—Ä–æ–Ω—ã: " << "a = " << a << " b = " << b << " c = " << c << std::endl;
 	}
 
 	void GetAngles() override {
-		std::cout << "”„Î˚: " << "A = " << A << " B = " << B << " C = " << C << std::endl;
+		std::cout << "–£–≥–ª—ã: " << "A = " << A << " B = " << B << " C = " << C << std::endl;
 	}
 
 protected:
@@ -79,11 +85,14 @@ protected:
 class RightTriangle : public Triangle {
 public:
 	RightTriangle(int a, int b, int c, int A, int B) : Triangle(a, b, c, A, B, 90) {
-		name = "œˇÏÓÛ„ÓÎ¸Ì˚È ÚÂÛ„ÓÎ¸ÌËÍ";
+		name = "–ü—Ä—è–º–æ—É–≥–æ–ª—å–Ω—ã–π —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫";
 	}
 
 	bool checkFigure() override {
-		return Triangle::checkFigure() and (C == 90? true : false);
+
+		bool condition = Triangle::checkFigure() && (C == 90 ? true : false)
+
+		return condition;
 	}
 
 };
@@ -91,11 +100,14 @@ public:
 class IsoscelesTriangle : public Triangle {
 public:
 	IsoscelesTriangle(int LengthAandC,  int b, int valueAnglesAandC, int B) : Triangle(LengthAandC, b, LengthAandC, valueAnglesAandC, B, valueAnglesAandC) {
-		name = "–‡‚ÌÓ·Â‰ÂÌÌ˚È ÚÂÛ„ÓÎ¸ÌËÍ";
+		name = "–†–∞–≤–Ω–æ–±–µ–¥—Ä–µ–Ω–Ω—ã–π —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫";
 	}
 
 	bool checkFigure() override {
-		return Triangle::checkFigure() and (a == c  and A == C ? true : false);
+
+		bool condition = Triangle::checkFigure() && (a == c && A == C ? true : false)
+
+		return condition;
 	}
 
 };
@@ -103,20 +115,23 @@ public:
 class EquilateraltTriangle : public Triangle {
 public:
 	EquilateraltTriangle(int LengthSide) : Triangle(LengthSide, LengthSide, LengthSide, 60, 60, 60) {
-		name = "–‡‚ÌÓÒÚÓÓÌÌËÈ ÚÂÛ„ÓÎ¸ÌËÍ";
+		name = "–†–∞–≤–Ω–æ—Å—Ç–æ—Ä–æ–Ω–Ω–∏–π —Ç—Ä–µ—É–≥–æ–ª—å–Ω–∏–∫";
 	}
 
 	bool checkFigure() override {
-		return Triangle::checkFigure() and ((a == c and a == b and b == c) and (A == C and A == B and B == C) ? true : false);
+
+		bool condition = Triangle::checkFigure() && ((a == c && a == b && b == c) && (A == C && A == B && B == C) ? true : false);
+
+		return condition;
 	}
 };
 
-// ◊ÂÚ˚ÂıÛ„ÓÎ¸ÌËÍ
+// –ß–µ—Ç—ã—Ä–µ—Ö—É–≥–æ–ª—å–Ω–∏–∫
 
 class Quadrilateral : public Figure {
 public:
 	Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) {
-		name = "◊ÂÚ˚ÂıÛ„ÓÎ¸ÌËÍ";
+		name = "–ß–µ—Ç—ã—Ä–µ—Ö—É–≥–æ–ª—å–Ω–∏–∫";
 		side = 4;
 		this->a = a;
 		this->b = b;
@@ -129,15 +144,18 @@ public:
 	}
 
 	bool checkFigure() override {
-		return (A + B + C +D == 360 ? true : false);
+
+		bool condition = (A + B + C + D == 360 ? true : false);
+
+		return condition;
 	}
 
 	void GetSides() override {
-		std::cout << "—ÚÓÓÌ˚: " << "a = " << a << " b = " << b << " c = " << c << " d = " << d << std::endl;
+		std::cout << "–°—Ç–æ—Ä–æ–Ω—ã: " << "a = " << a << " b = " << b << " c = " << c << " d = " << d << std::endl;
 	}
 
 	void GetAngles() override {
-		std::cout << "”„Î˚: " << "A = " << A << " B = " << B << " C = " << C << " D = " << D << std::endl;
+		std::cout << "–£–≥–ª—ã: " << "A = " << A << " B = " << B << " C = " << C << " D = " << D << std::endl;
 	}
 
 protected:
@@ -154,11 +172,14 @@ protected:
 class Parallelogram : public Quadrilateral {
 public:
 	Parallelogram(int LengthAandC, int LengthBandD, int AnglesAandC, int AnglesBandD) : Quadrilateral(LengthAandC, LengthBandD, LengthAandC, LengthBandD, AnglesAandC, AnglesBandD, AnglesAandC, AnglesBandD) {
-		name = "œ‡‡ÎÎÂÎÓ„‡ÏÏ";
+		name = "–ü–∞—Ä–∞–ª–ª–µ–ª–æ–≥—Ä–∞–º–º";
 	}
 
 	bool checkFigure() override {
-		return Quadrilateral::checkFigure() and ((a == c and b == d) and (A == C and B == D)? true : false);
+
+		bool condition = Quadrilateral::checkFigure() && ((a == c && b == d) && (A == C && B == D) ? true : false);
+
+		return condition;
 	}
 
 };
@@ -166,21 +187,21 @@ public:
 class Rectangle : public Parallelogram {
 public:
 	Rectangle(int LengthAandC, int LengthBandD) : Parallelogram(LengthAandC, LengthBandD, 90, 90) {
-		name = "œˇÏÓÛ„ÓÎ¸ÌËÍ";
+		name = "–ü—Ä—è–º–æ—É–≥–æ–ª—å–Ω–∏–∫";
 	}
 };
 
 class Rhomb : public Parallelogram {
 public:
 	Rhomb(int LengthSides, int AnglesAandC, int AnglesBandD) : Parallelogram(LengthSides, LengthSides, AnglesAandC, AnglesBandD) {
-		name = "–ÓÏ·";
+		name = "–†–æ–º–±";
 	}
 };
 
 class Square : public Rectangle {
 public:
 	Square(int LengthSides) : Rectangle(LengthSides, LengthSides) {
-		name = " ‚‡‰‡Ú";
+		name = "–ö–≤–∞–¥—Ä–∞—Ç";
 	}
 };
 
