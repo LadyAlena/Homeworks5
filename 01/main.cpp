@@ -1,10 +1,10 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 
 class Figure {
 public:
 	Figure() {
-		name = "Фигура";
+		name = "Р¤РёРіСѓСЂР°";
 		side = 0;
 	}
 	std::string GetName() {
@@ -21,7 +21,7 @@ protected:
 class Triangle : public Figure {
 public:
 	Triangle() {
-		name = "Треугольник";
+		name = "РўСЂРµСѓРіРѕР»СЊРЅРёРє";
 		side = 3;
 	}
 };
@@ -29,7 +29,7 @@ public:
 class Quadrilateral : public Figure {
 public:
 	Quadrilateral() {
-		name = "Четырехугольник";
+		name = "Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє";
 		side = 4;
 	}
 };
@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
 	Triangle tABC;
 	Quadrilateral qABCD;
 
-	std::cout << "Количество сторон: " << std::endl;
+	std::cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ: " << std::endl;
 
 	ShowInfoFigure(&circle);
 	ShowInfoFigure(&tABC);
