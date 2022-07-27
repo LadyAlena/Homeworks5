@@ -8,10 +8,10 @@ public:
 		side = 0;
 	}
 	std::string GetName() {
-		return this->name;
+		return name;
 	}
 	int GetNumberSides() {
-		return this->side;
+		return side;
 	}
 protected:
 	int side;
