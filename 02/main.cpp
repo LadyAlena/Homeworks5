@@ -10,11 +10,11 @@ public:
 	}
 
 	int GetCountSides() {
-		return this->side;
+		return side;
 	}
 
 	std::string GetName() {
-		return this->name;
+		return name;
 	}
 
 	virtual void GetSides() {};
